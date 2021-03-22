@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inner-container{
+    height: 60vh;
+    width: 90vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+}
+
+.buttons{
+    margin-bottom: 20px;
+}
+
+.array{
+    /* background: red; */
+    margin: 1px;
+    width: 5px;
+    /* border: 1px solid; */
+}
+
+.red{
+    background: red;
+}
+
+.blue{
+    background: blue;
+}
+
+.purple{
+    background: purple;
+}
+
+
+button{
+    border: none;
+    background: #cc00ff;
+    color: white;
+    outline: none;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.content{
+    display: flex;
+    padding: 10px;
+}

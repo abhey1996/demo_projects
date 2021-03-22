@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="inner-container">
+    <!-- [style.width]="width+'px'"  -->
+    <!-- [ngClass]="{'array':ran.value == 'original','array1':ran.value == 'selection','array2':ran.value == 'final'}" -->
+    <div class="buttons">
+      <button (click)="reset()">New array</button>
+      <button (click)="sort_Merge()">Merge Sort</button>
+      <button (click)="sort_Quick()">Quick Sort</button>
+      <button (click)="sort_Heap()">Heap Sort</button>
+      <button (click)="sort_Bubble()">Bubble Sort</button>
+      <button (click)="sort_Selection()">Selection Sort</button>
+      <button (click)="sort_Insertion()">Insertion Sort</button>
+      <button (click)="sort_Radix()">Radix Sort</button>
+      <button (click)="sort_Counting()">Counting Sort</button>
+    </div>
+    <div class="content">
+      <div class="array" *ngFor="let ran of randoms;let i=index"></div>
+    </div>
+  </div>
+</div>

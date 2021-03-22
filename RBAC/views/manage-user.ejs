@@ -1,0 +1,39 @@
+<%- include('./layouts/header') %>
+
+    <h3>Manage Users</h3>
+
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Role</th>
+        </thead>
+        <tbody>
+            <% users.forEach(user=> { %>
+                <tr>
+                    <td>
+                        <%= user.id %>
+                    </td>
+                    <td>
+                        <a href="/admin/user/<%= user.id %>">
+                            <%= user.email %>
+                        </a>
+                    </td>
+                    <td>
+                        <form action="/admin/update-user" method="post" class="manage-user-form">
+                            <input type="hidden" name="id" value="<%= user.id %>">
+                            <select name="role" id="role">
+                                <option value="ADMIN" <%=user.role==='ADMIN' ? 'selected' : '' %> >Admin</option>
+                                <option value="MODERATOR" <%=user.role==='MODERATOR' ? 'selected' : '' %> >Moderator
+                                </option>
+                                <option value="CLIENT" <%=user.role==='CLIENT' ? 'selected' : '' %> >Client</option>
+                            </select>
+                            <input type="submit" value="update">
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+    <%- include('./layouts/footer') %>

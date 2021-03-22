@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: #1E0555;
+}
+
+body,.quoteArea{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.timer{
+    position: absolute;
+    top: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F0DB4F;
+}
+
+.container{
+    border-radius: .5rem;
+    background: #F0DB4F;
+    padding: 1rem;
+    width: 700px;
+    max-width: 90%;
+}
+
+.quoteText{
+    margin-bottom: 1rem;
+    margin-left: calc(1rem + 1px);
+    margin-right: calc(1rem + 1px);
+}
+
+.quoteArea{
+    outline: none;
+    border: 2px solid #A1922E;
+    padding: .5rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: .5rem;
+    margin: auto;
+    resize: none;
+}
+
+.quoteArea:focus{
+    border-color: black;
+}
+
+.correct{
+    color: green;
+}
+
+.incorrect{
+    color: red;
+    text-decoration: underline;
+}

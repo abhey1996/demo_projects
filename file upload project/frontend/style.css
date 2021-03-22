@@ -1,0 +1,254 @@
+:root{
+    --main-width: 400px
+}
+
+body{
+    font-family: system-ui;
+    background: #eff5fe;
+    height: 100vh;
+    padding: 0;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container{
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 20px 12px 3px #00000021;
+}
+
+.drop-zone{
+    width: var(--main-width);
+    min-height: 200px;
+    margin: 20px;
+    border: 2px dashed #0288d147;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+    transition: all .2s ease;
+}
+
+.dragged.drop-zone{
+    border-color: #2196f3;
+    background: #eff5fe;
+}
+
+.icon-container{
+    width: 75px;
+    height: 100px;
+    position: relative;
+}
+
+.icon-container img{
+    width: 75px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform .25s ease-in-out;
+}
+
+.icon-container .center{
+    z-index: 2;
+}
+
+.icon-container .right,.icon-container .left{
+    filter: grayscale(.8);
+    transform: scale(.9);
+}
+
+.dragged .icon-container .right{
+    transform: rotate(10deg) translateX(20px) scale(.9);
+}
+
+.dragged .icon-container .left{
+    transform: rotate(-10deg) translateX(-20px) scale(.9);
+}
+
+.dragged .icon-container .center{
+    transform: translateY(-5px);
+}
+
+#inputFile{
+    display: none;
+}
+
+.browseBtn{
+    color:#2196f3;
+    cursor: pointer;
+}
+
+.progress-container{
+    /* background: black; */
+    width: var(--main-width);
+    height: 75px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    border: 2px dashed #0288d147;
+    border-radius: 10px;
+    position: relative;
+    display: none;
+}
+
+.progress-box{
+    background: #eff5fe;
+    width: 0%;
+    height: 75px;
+    border-radius: 10px;
+    transition: width .25s linear;
+    position: absolute;
+}
+
+.progress-container .inner-container{
+    position: absolute;
+    z-index: 1;
+    top:10px;
+    left:15px;
+    width: calc(100% - 20px);
+}
+
+.progress-container .percentText{
+    opacity: .8;
+    font-size: 12px;
+}
+
+.progress-bar{
+    height: 3px;
+    width: 100%;
+    background: #2196f3;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .2s linear;
+}
+
+.link-container{
+    width: var(--main-width);
+    margin: 0 20px 20px 20px;
+    display: none;
+}
+
+.link-container p{
+    text-align: center;
+    opacity: .6;
+    font-size: 15px;
+}
+
+.link-container .link-display{
+   position: relative;
+}
+
+.link-container .input-link{
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px dashed #0288d147;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    background: #f5fcff;
+    color: #0000008c;
+}
+
+.link-container #copyBtn{
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    top: 12px;
+    right: 4px;
+    background: #f5fcff;
+    cursor: pointer;
+}
+
+.email-container{
+    display: flex;
+    align-items: center;
+    width: var(--main-width);
+    justify-content: center;
+}
+
+.email-container form{
+    width: 100%;
+    border: 2px solid #0288d147;
+    border-radius: 10px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.email-container .field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:5px ;
+    width: 100%;
+}
+
+.email-container label{
+    font-size: 18px;
+}
+
+.email-container input{
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid #0288d147;
+    text-align: center;
+    max-width: 160px;   
+}
+
+.email-container input:focus{
+    outline: none;
+}
+
+.email-container button{
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 8px 14px;
+    color: #687d8b;
+    background: #eff5fe;
+    cursor: pointer;
+}
+
+.toast{
+    position: absolute;
+    font-size: 18px;
+    padding: 10px;
+    background: #03a9f4;
+    color: #fff;
+    border-radius: 5px;
+    bottom: 0;
+    transform: translateY(60px);
+    transition: transform .2s ease-in-out;
+    box-shadow: 0px 0px 4px 2px #0000004a;
+}
+
+.upload-pic{
+    background: url(./upload.svg) no-repeat center;
+    background-size: contain;
+    width: 50vw;
+    height: 50vh;
+}
+
+@media screen and (max-width: 900px){
+    :root{
+        --main-width: 300px
+    }
+    .upload-pic{
+        display: none;
+    }
+    .email-container .field{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
